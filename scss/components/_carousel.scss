@@ -1,0 +1,123 @@
+.carousel {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-content {
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  background: var(--vary-light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1.25rem;
+  margin: 5rem auto;
+  border-radius: 0.3125rem;
+  position: relative;
+  min-width: 100%;
+}
+
+.active .content {
+  background: var(--vary-light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1.25rem;
+  margin: 5rem auto;
+  border-radius: 0.3125rem;
+  position: relative;
+  min-width: 100%;
+}
+
+.carousel-content > div {
+  img {
+    height: 4.375rem;
+    position: absolute;
+    inset: 0;
+    margin-inline: auto;
+    transform: translateY(-50%);
+  }
+
+  h3 {
+    font-size: var(--fs-body);
+    margin: 1.875rem 0;
+  }
+
+  blockquote {
+    color: var(--dark-grayish-blue);
+    font-size: var(--fs-footer);
+    line-height: 1.6;
+  }
+}
+
+.carousel-btns {
+  margin-bottom: 3.75rem;
+}
+
+.btn-carousel {
+  background: var(--white);
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0.0625rem solid var(--bright-red);
+  border-radius: 50%;
+}
+
+.btn-carousel.active {
+  background: var(--bright-red);
+}
+
+@media screen and (min-width: 50em) {
+  .carousel-container {
+    position: relative;
+  }
+
+  .carousel-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 130%;
+    height: 140vh;
+    aspect-ratio: 1/1.2;
+    background-image: url(../images/bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-position: -156% 86%;
+  }
+
+  .carousel {
+    width: 50%;
+    overflow: visible;
+  }
+
+  .content {
+    min-width: 70%;
+  }
+
+  .carousel-btns {
+    visibility: hidden;
+    margin-bottom: 0;
+  }
+
+  .content.desktop {
+    transform: translateX(5%);
+  }
+
+  .content.desktop2 {
+    transform: translateX(22%);
+  }
+
+  .content.desktop3 {
+    transform: translateX(39%);
+  }
+
+  .content.desktop4 {
+    transform: translateX(56%);
+  }
+}

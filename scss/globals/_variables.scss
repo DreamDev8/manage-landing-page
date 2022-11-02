@@ -1,0 +1,47 @@
+:root {
+
+  // color
+  --bright-red: hsl(12, 88%, 59%);
+  --pale-red: hsl(12, 100%, 75%);
+  --very-pale-red: hsl(13, 100%, 96%);
+  --dark-blue: hsl(228, 39%, 23%);
+  --dark-grayish-blue: hsl(227, 12%, 61%);
+  --very-dark-blue: hsl(233, 12%, 13%);
+  --vary-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 100%, 100%);
+
+  // font-family
+  --ff-primary: "Be Vietnam Pro", sans-serif;
+  --ff-body: var(--ff-primary);
+
+  // font-weight
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  //font-size
+  --fs-btn: 0.8125rem;
+  --fs-footer: 0.9375rem;
+
+  --fs-body-mobile: 0.875rem;
+  --fs-nav-mobile: 1rem;
+  --fs-nav-drop-down: 0.9375rem;
+  --fs-h1-mobile: 2.5rem;
+  --fs-h2-mobile: 1.875rem;
+
+  --fs-body: 1rem;
+  --fs-nav-desktop: 0.875rem;
+  --fs-h1-desktop: 3.5rem;
+  --fs-h2-desktop: 2.5rem;
+
+  //margin
+  --margin-xsm: 1rem;
+  --margin-section: 7.5rem;
+  --margin-copy: 2.5rem;
+  --margin-list: 1.5625rem;
+  --margin-li-footer: 1.25rem;
+  --margin-li-footer-mobile: 0.9375rem;
+  
+  --max-width: 69.375rem;
+  --side-margin-mobile: 1.25rem;
+}

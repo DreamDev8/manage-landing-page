@@ -1,0 +1,46 @@
+/*mobile*/
+
+.hero-image {
+  order: 1;
+  margin-inline: auto;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  width: 87%;
+  max-height: 70vh;
+  aspect-ratio: 1 / 1.2;
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.hero-copy {
+  order: 2;
+  text-align: center;
+}
+
+/*desktop*/
+@media screen and (min-width: 50em) {
+  .hero-image {
+    order: 2;
+  }
+
+  .hero-image::before {
+    width: 40%;
+  }
+
+  .hero-copy {
+    order: 1;
+    text-align: left;
+
+    p {
+      max-width: 21.875rem;
+    }
+  }
+}
+

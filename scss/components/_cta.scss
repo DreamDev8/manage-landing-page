@@ -1,0 +1,54 @@
+/*mobile*/
+
+.cta-container {
+  background-color: var(--bright-red);
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  padding: 6.5625rem 2.1875rem;
+
+  .grid :last-child {
+    justify-self: center;
+  }
+
+  h2 {
+    color: var(--white);
+    font-size: var(--fs-h2-desktop);
+    font-weight: var(--fw-500);
+    line-height: 1.2;
+  }
+}
+
+.cta-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url(../images/bg-tablet-pattern.svg),
+    url(../images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  background-position: 5.625rem -4.375rem, 82.5rem -35rem;
+  background-size: 46.875rem;
+  opacity: 0.1;
+}
+
+/*desktop*/
+@media screen and (min-width: 50em) {
+  .cta-container {
+    text-align: left;
+    padding: 4.375rem 10.3125rem;
+
+    .grid {
+      align-items: center;
+
+      h2 {
+        min-width: 18.75rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    .grid :last-child {
+      justify-self: end;
+    }
+  }
+}

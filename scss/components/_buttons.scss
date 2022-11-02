@@ -1,0 +1,49 @@
+.btn {
+  background-color: var(--bright-red);
+  color: var(--white);
+  font-size: var(--fs-btn);
+  font-weight: var(--fw-500);
+  width: 8.4375rem;
+  height: 2.8125rem;
+  border-radius: 1.25rem;
+  border: transparent;
+  box-shadow: 0 1rem 1rem -1rem var(--bright-red);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--pale-red);
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--bright-red);
+  font-size: var(--fs-btn);
+  font-weight: var(--fw-500);
+  width: 8.4375rem;
+  height: 2.8125rem;
+  border-radius: 1.25rem;
+  border: transparent;
+  box-shadow: 0 1rem 1rem -1rem var(--bright-red);
+  cursor: pointer;
+}
+
+.btn-white:hover {
+  color: var(--pale-red);
+}
+
+.btn-footer {
+  background-color: var(--bright-red);
+  color: var(--white);
+  font-size: var(--fs-btn);
+  font-weight: var(--fw-500);
+  width: 4.0625rem;
+  height: 3.125rem;
+  border-radius: 1.5625rem;
+  border: transparent;
+  cursor: pointer;
+}
+
+.btn-footer:hover {
+    background-color: var(--pale-red);
+}
