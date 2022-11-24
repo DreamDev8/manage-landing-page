@@ -23,7 +23,7 @@ window.addEventListener("resize", function () {
   }
 });
 
-//carousel
+// Carousel
 
 const carousel = document.querySelector(".carousel");
 const btns = document.querySelectorAll(".btn-carousel");
