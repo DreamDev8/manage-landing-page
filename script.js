@@ -38,80 +38,55 @@ sliderContainer.style.transform =
   "translateX(" + -sliderSize * currentSliderCounter + "px)";
 
 function nextSlide() {
-  btns[currentBtnCounter].classList.remove("active");
+  btns.forEach(function (btn) {
+    btn.classList.remove("active");
+  });
 
   if (
     currentSliderCounter < content.length - 1 &&
     currentBtnCounter < btns.length - 1
   ) {
     currentBtnCounter++;
-    btns[currentBtnCounter].classList.add("active");
-
     currentSliderCounter++;
-
-    sliderContainer.style.transition = "transform 0.4s ease-in-out";
-    sliderContainer.style.transform =
-      "translateX(" + -sliderSize * currentSliderCounter + "px)";
   } else {
     currentSliderCounter = 0;
     currentBtnCounter = 0;
-
-    btns[currentBtnCounter].classList.add("active");
-
-    sliderContainer.style.transition = "transform 0.4s ease-in-out";
-    sliderContainer.style.transform =
-      "translateX(" + -sliderSize * currentSliderCounter + "px)";
   }
-  window.addEventListener("resize", function () {
-    sliderContainer.style.transition = "none";
-    sliderSize = content[0].clientWidth;
-    sliderContainer.style.transform =
-      "translateX(" + -sliderSize * currentSliderCounter + "px)";
-  });
 
-  carousel.addEventListener("click", function (e) {
-    const btnId = e.target.dataset.id;
-
-    if (btnId) {
-      btns.forEach(function (btn) {
-        btn.classList.remove("active");
-        e.target.classList.add("active");
-      });
-
-      content.forEach(function (singleContent) {
-        singleContent.classList.remove("active");
-      });
-
-      const contentId = document.getElementById(btnId);
-      contentId.classList.add("active");
-      sliderSize = contentId.clientWidth;
-
-      if (contentId === content[0]) {
-        currentSliderCounter = 0;
-        sliderContainer.style.transform =
-          "translateX(" + sliderSize * currentSliderCounter + "px)";
-        sliderContainer.style.transition = "transform 0.4s ease-in-out";
-      } else if (contentId === content[1]) {
-        currentSliderCounter = 1;
-        sliderContainer.style.transform =
-          "translateX(" + -sliderSize * currentSliderCounter + "px)";
-        sliderContainer.style.transition = "transform 0.4s ease-in-out";
-      } else if (contentId === content[2]) {
-        currentSliderCounter = 2;
-        sliderContainer.style.transform =
-          "translateX(" + -sliderSize * currentSliderCounter + "px)";
-        sliderContainer.style.transition = "transform 0.4s ease-in-out";
-      } else if (contentId === content[3]) {
-        currentSliderCounter = 3;
-        sliderContainer.style.transform =
-          "translateX(" + -sliderSize * currentSliderCounter + "px)";
-        sliderContainer.style.transition = "transform 0.4s ease-in-out";
-      }
-    }
-  });
+  btns[currentBtnCounter].classList.add("active");
+  sliderContainer.style.transition = "transform 0.4s ease-in-out";
+  sliderContainer.style.transform =
+    "translateX(" + -sliderSize * currentSliderCounter + "px)";
 }
 
-setInterval(nextSlide, 4000);
+var timerId = setInterval(nextSlide, 4000);
+
+carousel.addEventListener("click", function (e) {
+  const btnId = e.target.dataset.id;
+
+  if (btnId) {
+    let carouselNumber = parseInt(btnId.charAt(btnId.length - 1));
+
+    if (carouselNumber - 2 < 0) {
+      carouselNumber = btnId.length - 1;
+    } else {
+      carouselNumber -= 2;
+    }
+
+    currentSliderCounter = carouselNumber;
+    currentBtnCounter = carouselNumber;
+    clearInterval(timerId);
+    nextSlide();
+    timerId = setInterval(nextSlide, 4000);
+  }
+});
+
+window.addEventListener("resize", function () {
+  sliderContainer.style.transition = "none";
+  sliderSize = content[0].clientWidth;
+  sliderContainer.style.transform =
+    "translateX(" + -sliderSize * currentSliderCounter + "px)";
+});
 
 //footer
 
